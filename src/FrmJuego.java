@@ -108,7 +108,10 @@ public class FrmJuego extends JFrame{
     private int lanzamientos, cenas;
 
     private void iniciar(){
-
+        lanzamientos = 0;
+        cenas = 0;
+        lblLanzamientos.setText(String.valueOf(lanzamientos));
+        lblCenas.setText(String.valueOf(cenas));
     }
 
     private void lanzar(){
@@ -120,6 +123,11 @@ public class FrmJuego extends JFrame{
 
         lanzamientos ++;
         lblLanzamientos.setText(String.valueOf(lanzamientos));
+
+        if(dado1.getNumero() + dado2.getNumero() >= 11){
+            cenas ++;
+            lblCenas.setText(String.valueOf(cenas));
+        }
     }
 
 }
